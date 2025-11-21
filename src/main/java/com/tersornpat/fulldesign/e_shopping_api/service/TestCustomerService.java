@@ -9,11 +9,16 @@ import java.util.List;
 @Service
 public class TestCustomerService {
     private final TestCustomerRepository testCustomerRepository;
+
     public TestCustomerService(TestCustomerRepository testCustomerRepository) {
         this.testCustomerRepository = testCustomerRepository;
     }
 
-    public List<TestCustomerEntity> getAllUser(){
+    public List<TestCustomerEntity> getAllUser() {
         return testCustomerRepository.findAll();
+    }
+
+    public TestCustomerEntity getUserById(Long id) {
+        return testCustomerRepository.findById(id).get();
     }
 }

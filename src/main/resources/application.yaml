@@ -1,3 +1,23 @@
 spring:
   application:
     name: e-shopping-api
+  profiles:
+    active: dev
+    include:
+      - common
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
